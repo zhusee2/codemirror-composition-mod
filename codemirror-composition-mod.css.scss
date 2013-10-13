@@ -1,0 +1,27 @@
+@import "compass/css3/transition";
+@import "compass/css3/box-shadow";
+
+.CodeMirror-input-wrapper.in-composition {
+  overflow: visible !important;
+
+  textarea {
+    background-color: transparent;
+    min-width: 500px;
+    height: 1.5em !important;
+    font-family: inherit !important;
+    font-size: 14px !important;
+    border: none;
+    z-index: 10;
+    top: -2px;
+
+    @include box-shadow(none);
+    @include transition(none);
+  }
+
+  & ~ .CodeMirror-scroll .CodeMirror-cursor {
+    display: none;
+  }
+}
+.CodeMirror-text-in-composition {
+  color: transparent;
+}
