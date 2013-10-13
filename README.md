@@ -9,7 +9,12 @@ This add-on tries to enhance the composition experience of CodeMirror for IME us
 
 ## Usage
 
-This repository contains only source in CoffeeScript. Please compile it to JS, then load it after the main scripts of CodeMiror.
+This repository contains only source in CoffeeScript. Please compile it to JS, then load it after the main scripts of CodeMiror. You'll also need the stylesheet to force the input of CodeMirror to show up.
+
+```html
+<link rel="stylesheet" type="text/css" href="codemirror-composition-mod.css" />
+<script type="text/javascript" src="codemirror-composition-mod.js"></script>
+```
 
 It adds a new option `enableCompositionMod` to CodeMirror. Setting this option to true in CodeMirror constructor or with `cm.setOption()` to enable this mod.
 
