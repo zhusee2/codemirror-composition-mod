@@ -83,6 +83,8 @@ initCompositionMode = (cm) ->
     cm.display.inCompositionMode = true
     cm.setOption('readOnly', true)
 
+    cm.replaceSelection("") if cm.somethingSelected() # Clear the selected text first
+
     cm.display.compositionHead = cm.getCursor()
     console.log "[compositionstart] Update Composition Head", cm.display.compositionHead  if cm.options.debugCompositionMod
 
