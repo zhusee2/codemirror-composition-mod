@@ -1,6 +1,6 @@
 ###
 # Composition Mod for CodeMirror
-# v2.0.1
+# v2.0.2
 # Zhusee <zhusee2@gmail.com>
 #
 # Additional instance properties added to CodeMirror:
