@@ -76,6 +76,7 @@ clearCompositionTextMarkers = (cm)->
 initCompositionMode = (cm) ->
   inputField = cm.display.input
   inputWrapper = cm.display.inputDiv
+  inputWrapper.classList.add('CodeMirror-input-wrapper')
 
   CodeMirror.on inputField, 'compositionstart', (event) ->
     return if !cm.options.enableCompositionMod
@@ -91,12 +92,10 @@ initCompositionMode = (cm) ->
     inputField.value = ""
     console.log "[compositionstart] Clear cm.display.input", cm.display.compositionHead  if cm.options.debugCompositionMod
 
-    inputWrapper.classList.add('CodeMirror-input-wrapper')
     inputWrapper.classList.add('in-composition')
 
   CodeMirror.on inputField, 'compositionupdate', (event) ->
     return if !cm.options.enableCompositionMod
-
     headPos = cm.display.compositionHead
 
     if cm.display.textMarkerInComposition
@@ -129,7 +128,6 @@ initCompositionMode = (cm) ->
     cm.display.textMarkerInComposition = undefined
     cm.setOption('readOnly', false)
 
-    inputWrapper.classList.remove('CodeMirror-input-wrapper')
     inputWrapper.classList.remove('in-composition')
 
     clearCompositionTextMarkers(cm)
