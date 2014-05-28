@@ -3,6 +3,10 @@
 
 .CodeMirror-input-wrapper {
   overflow: visible !important;
+
+  textarea {
+    resize: none;
+  }
 }
 .CodeMirror-input-wrapper.in-composition {
   textarea {
